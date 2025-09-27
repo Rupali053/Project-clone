@@ -528,7 +528,9 @@ export default function AddEntryReplica() {
         url: "" // abhi blank, baad me agar Cloudinary/S3 use karoge to yaha link aayega
       }));
 
-      const res = await fetch("http://localhost:5000/api/entries", {
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
+        const res = await fetch(`${apiUrl}/api/entries`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
